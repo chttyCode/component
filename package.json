@@ -14,10 +14,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "npm run lint",
-      "npm run build"
-    ]
+    "*.{js,ts,tsx}": "npm run lint"
   },
   "repository": {
     "type": "git",
