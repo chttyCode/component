@@ -15,7 +15,7 @@
   },
   "lint-staged": {
       "*.{js,ts,tsx}": [
-          "eslint --fix"
+          "npm run lint"
       ]
   },
   "repository": {
