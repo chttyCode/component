@@ -24,7 +24,7 @@
 
 // ReactDom.render(<App />, document.getElementById("root"));
 
-const p = new Promise((resolve, reject) => {
+const p = new Promise((resolve, reject   ) => {
   resolve(true);
 });
 console.log(p);
