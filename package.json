@@ -8,11 +8,6 @@
     "start": "webpack serve",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,ts,tsx}": "npm run lint"
   },
