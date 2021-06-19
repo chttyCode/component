@@ -8,10 +8,13 @@
     "start": "webpack serve",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
     "prepare": "husky install",
-    "pre-commit-lint":"npm  lint-staged"
+    "pre-commit":"lint-staged"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "npm run lint"
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "npm run lint",
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
