@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve",
-    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
+    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet --fix",
     "prepare": "husky install",
     "pre-commit":"lint-staged"
   },
