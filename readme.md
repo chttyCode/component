@@ -39,6 +39,13 @@
             -  @babel-runtime 
                 - 解决preset-env的全局污染
                 - 手动按需加载腻子
+                ```js
+                import Promise from 'babel-runtime/core-js/promise';
+                const p = new Promise(()=> {
+
+                });
+                console.log(p);
+                ``` 
             -  @babel-plugin-transform-runtime
                 - 按需引入、局部引入
                 - 解决的问题
