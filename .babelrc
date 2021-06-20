@@ -6,7 +6,7 @@
             {
                 "corejs": 3,
                 "helpers": true,
-                "regenerator": true,
+                "regenerator": true
             }
         ],
         ["@babel/plugin-proposal-decorators", { "legacy": true }],

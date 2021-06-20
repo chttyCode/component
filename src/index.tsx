@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
+import Button from "./components/button";
+import "./styles/index.scss";
 
 function rootConfig(target: typeof App) {
   target.role = "root";
@@ -17,8 +19,16 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div>Hello React typescript {this.state.number}</div>
-        <button onClick={this.handlerClick}> +</button>
+        <div>组件库</div>
+        <Button btnType="default">Button</Button>
+        <Button btnType="danger">Button</Button>
+        <Button btnType="primary">Button</Button>
+        <Button
+          btnType="link"
+          href="https://github.com/chttyCode/KnPoint/blob/master/content/eslint-typescript.md"
+        >
+          Button
+        </Button>
       </>
     );
   }
