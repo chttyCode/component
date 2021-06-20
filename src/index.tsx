@@ -1,11 +1,19 @@
 import React from "react";
 import ReactDom from "react-dom";
 import Button from "./components/button";
+import AutoComplete from "./components/AutoComplete";
+import Input from "./components/Input";
 import "./styles/index.scss";
 
 function rootConfig(target: typeof App) {
   target.role = "root";
 }
+const testArray = [
+  { value: "ab", number: 11 },
+  { value: "abc", number: 1 },
+  { value: "b", number: 4 },
+  { value: "c", number: 15 },
+];
 
 @rootConfig
 class App extends React.Component {
@@ -15,6 +23,9 @@ class App extends React.Component {
   };
   handlerClick = () => {
     this.setState({ number: this.state.number + 1 });
+  };
+  fetchSuggestions = (query: string) => {
+    return testArray.filter((item) => item.value.includes(query));
   };
   render() {
     return (
@@ -29,6 +40,10 @@ class App extends React.Component {
         >
           Button
         </Button>
+        <hr />
+        <AutoComplete fetchSuggestions={this.fetchSuggestions} />
+        <hr />
+        <Input />
       </>
     );
   }

@@ -129,8 +129,64 @@
     - 定义对象
     - The \_ (underscore) is a partial for scss. That means the stylesheet its going to be imported (@import) to a main stylesheet i.e. styles.scss.
 - 组件开发
-  - 接口定义
-  - button 开发
+
+  - 需求分析
+    - 属性
+  - 开发
+    - mvp(最小可用原型)
+    - 接口定义
+    - 取出所有的属性
+    - 计算属性
+    - 根据属性显示具体的节点
+    - 定义组件的样式变量
+    - 添加注释
+    - story
+    - test
+      - 改变 input value
+      - async await
+  - 持续优化(warnning 错误引起，在组件内部 hack)
+    - onChange
+    - 受控组件 vs 非受控组件
+      - value&defaultValue 同时存在
+        - 在组件内部 fixed delete defaultValue
+      - value
+        - 由 undefined 到被赋值，React 会抛错
+        - 在组件内部 fixed,默认赋值为空
+    -
+
+- test 开发
+
+  - [jest](https://jestjs.io/)
+    - 概念
+      - 断言 https://jestjs.io/docs/using-matchers
+  - 使用
+
+    - 安装
+      - jest
+      - react 集成
+        - Enzyme(airbnb),操作如 jq
+        - @testing-library/react
+        ```js
+        npm i jest @types/jest @testing-library/react @testing-library/jest-dom -D
+        ```
+      - jest: jest 核心库
+      - @testing-library/react： 测试 React 组件的解决方案
+      - @testing-library/jest-dom : 扩展 jest 的 dom 断言
+    - add jest.config.js
+    - setupTests.ts
+      - 全局 test 通用配置
+    - 使用
+      - getByText vs queryByText
+        - 返回类型不同
+      - mock Funcitons:捕获函数是否被调用
+        - 定义 disabledProps
+        - 触发事件
+        ```js
+        <!-- import { render, fireEvent } from "@testing-library/react"; -->
+        fireEvent.click(element);
+        ```
+
+    > [testing-library](https://testing-library.com/docs/)
 
 # 组件文档生产
 

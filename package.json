@@ -8,7 +8,8 @@
     "start": "webpack serve",
     "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet --fix",
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "test": "jest"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -34,8 +35,12 @@
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.7",
+    "@types/react-transition-group": "^4.4.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^5.2.6",
@@ -44,6 +49,7 @@
     "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.3.1",
     "husky": "^6.0.0",
+    "jest": "^27.0.4",
     "lint-staged": "^11.0.0",
     "post-loader": "^2.0.0",
     "postcss-loader": "^6.1.0",
@@ -59,11 +65,15 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.14.6",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
     "classnames": "^2.3.1",
     "eslint": "^7.29.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-transition-group": "^4.4.2"
   }
 }

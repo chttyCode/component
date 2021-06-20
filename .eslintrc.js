@@ -22,5 +22,8 @@ module.exports = {
     // 放置来指定ESLint规则。可用于覆盖从扩展配置中指定的规则
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-types": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
   },
 };
