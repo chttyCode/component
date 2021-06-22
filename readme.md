@@ -197,5 +197,16 @@
   - 属性展示
   - 事件调用
   - 生产使用文档
+- storybook
+  - npx sb init
+    - post-scss 
+      - add @storybook/addon-postcss in addons   
+      - Deprecated default PostCSS plugins
+     - webpack  TypeError: Cannot read property 'get' of undefined
+      -  https://github.com/storybookjs/storybook/issues/14497
+  -  Storybook 6.2 includes experimental Webpack 5 support. webpack 兼容有问题
+      -  https://github.com/storybookjs/storybook/issues/14878
+  -  Clean install https://gist.github.com/shilman/8856ea1786dcd247139b47b270912324  
+         
 
 # CI/CD
