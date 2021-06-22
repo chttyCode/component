@@ -207,6 +207,9 @@
   -  Storybook 6.2 includes experimental Webpack 5 support. webpack 兼容有问题
       -  https://github.com/storybookjs/storybook/issues/14878
   -  Clean install https://gist.github.com/shilman/8856ea1786dcd247139b47b270912324  
+- 展示源码
+  - https://github.com/storybookjs/deprecated-addons/tree/master/addons/info   
+- 展示参数
          
 
 # CI/CD
