@@ -198,86 +198,92 @@
   - 事件调用
   - 生产使用文档
 - storybook
-  - npx sb init
-    - post-scss 
-      - add @storybook/addon-postcss in addons   
-      - Deprecated default PostCSS plugins
-     - webpack  TypeError: Cannot read property 'get' of undefined
-      -  https://github.com/storybookjs/storybook/issues/14497
-  -  Storybook 6.2 includes experimental Webpack 5 support. webpack 兼容有问题
-      -  https://github.com/storybookjs/storybook/issues/14878
-  -  Clean install https://gist.github.com/shilman/8856ea1786dcd247139b47b270912324  
+  - install
+    - npx sb init
+    - Storybook 6.2 includes experimental Webpack 5 support. webpack 兼容有问题
+      - https://github.com/storybookjs/storybook/issues/14878
+    - Clean install https://gist.github.com/shilman/8856ea1786dcd247139b47b270912324
+  - post-scss
+    - add @storybook/addon-postcss in addons
+    - Deprecated default PostCSS plugins
+    - webpack TypeError: Cannot read property 'get' of undefined
+    - https://github.com/storybookjs/storybook/issues/14497
+- scss
+  - npm i -D @storybook/preset-scss css-loader sass sass-loader style-loader
+- 待修复
+  - scss+postcss??
 - 展示源码
-  - https://github.com/storybookjs/deprecated-addons/tree/master/addons/info 
-  - add @storybook/addon-info @types/storybook\_\_addon-info 
+
+  - https://github.com/storybookjs/deprecated-addons/tree/master/addons/info
+  - add @storybook/addon-info @types/storybook\_\_addon-info
+
   ```js
   //preview.js
-    import React from "react";
-      import { withInfo } from "@storybook/addon-info";
-      import "../src/styles/index.scss";
-      export const parameters = {
-        actions: { argTypesRegex: "^on[A-Z].*" },
-        controls: {
-          matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/,
-          },
-        },
-        info: { inline: true, header: false },
-      };
+  import React from "react";
+  import { withInfo } from "@storybook/addon-info";
+  import "../src/styles/index.scss";
+  export const parameters = {
+    actions: { argTypesRegex: "^on[A-Z].*" },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
+    info: { inline: true, header: false },
+  };
 
-      export const decorators = [
-        withInfo,
-        (Story) => (
-          <div style={{ margin: "3em" }}>
-            <Story />
-          </div>
-        ),
-      ];
-
+  export const decorators = [
+    withInfo,
+    (Story) => (
+      <div style={{ margin: "3em" }}>
+        <Story />
+      </div>
+    ),
+  ];
   ```
+
 - 展示参数
+
   ```js
   // main.js
   module.exports = {
-      stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-      addons: [
-        "@storybook/addon-links",
-        "@storybook/addon-essentials",
-        "@storybook/preset-scss",
-      ],
-      core: {
-        builder: "webpack5",
-      },
-      webpackFinal: (config) => {
-        config.module.rules.push({
-          test: /\.tsx?$/,
-          use: [
-            {
-              loader: require.resolve("babel-loader"),
-              options: {
-                presets: [require.resolve("babel-preset-react-app")],
+    stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
+    addons: [
+      "@storybook/addon-links",
+      "@storybook/addon-essentials",
+      "@storybook/preset-scss",
+    ],
+    core: {
+      builder: "webpack5",
+    },
+    webpackFinal: (config) => {
+      config.module.rules.push({
+        test: /\.tsx?$/,
+        use: [
+          {
+            loader: require.resolve("babel-loader"),
+            options: {
+              presets: [require.resolve("babel-preset-react-app")],
+            },
+          },
+          {
+            loader: require.resolve("react-docgen-typescript-loader"),
+            options: {
+              shouldExtractLiteralValuesFromEnum: true,
+              propFilter: (prop) => {
+                if (prop.parent) {
+                  return !prop.parent.fileName.includes("node_modules");
+                }
+                return true;
               },
             },
-            {
-              loader: require.resolve("react-docgen-typescript-loader"),
-              options: {
-                shouldExtractLiteralValuesFromEnum: true,
-                propFilter: (prop) => {
-                  if (prop.parent) {
-                    return !prop.parent.fileName.includes("node_modules");
-                  }
-                  return true;
-                },
-              },
-            },
-          ],
-        });
-        return config;
-      },
-    };
-
+          },
+        ],
+      });
+      return config;
+    },
+  };
   ```
-         
 
 # CI/CD

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import Button from "./components/button";
-import AutoComplete from "./components/AutoComplete";
+import AutoComplete from "./components/autoComplete";
 import Input from "./components/Input";
 import "./styles/index.scss";
 
