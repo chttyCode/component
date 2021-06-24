@@ -286,4 +286,31 @@
   };
   ```
 
+- 打包
+  - 什么是模块
+    - 可重用
+    - 可维护
+  - 模块化历史
+    - 全局+命名口空间
+    - commjs+AMD
+    - es6 esMoudle
+      - 允许静态分析，可以实现 tree-shaking
+      - 循环引用&动态绑定
+  - 输出的模块类型
+    - eg:
+      - Ant Design 支持浏览器引入
+        - 不支持按需加载
+    - 采用 esmoudle 打包文档
+  - 入口文件
+    - package.json
+      - main
+      - module
+    - index.tsx(入口文件)
+  - 样式采用文件单独引入的方式
+  - 配置打包 tsconfig.build.json
+  - 配置打包命令
+    - 打包
+  - 本地开发测试
+    -
+
 # CI/CD

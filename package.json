@@ -2,16 +2,21 @@
   "name": "component",
   "version": "1.0.0",
   "description": "* 依赖安装     - webpack webpack-cli     - babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript     - react react-dom     - style-loder css-loader sass-loader sass post-loader",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack",
     "start": "webpack serve",
     "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet --fix",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clean": "rimraf ./dist",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "sass ./src/styles/index.scss ./dist/index.css",
+    "build": "npm run clean && npm run build-ts && npm run build-css"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -64,6 +69,7 @@
     "postcss-loader": "^6.1.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.3.1",
+    "rmraf": "^1.0.3",
     "sass": "^1.35.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^2.0.0",
