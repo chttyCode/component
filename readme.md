@@ -343,5 +343,7 @@
 - 精简依赖包
   - peerDependencies 处理版本冲突
     - 本地开发时可将依赖设置为 devDependencies
+- lint & test
+  - 发布前执行代码规范和测试用例
 
 # CI/CD
