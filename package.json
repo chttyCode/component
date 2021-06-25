@@ -1,7 +1,8 @@
 {
-  "name": "component",
-  "version": "1.0.0",
-  "description": "* 依赖安装     - webpack webpack-cli     - babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript     - react react-dom     - style-loder css-loader sass-loader sass post-loader",
+  "name": "chtty-component",
+  "version": "0.1.1",
+  "private":false,
+  "description": "web component",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +17,8 @@
     "clean": "rimraf ./dist",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "sass ./src/styles/index.scss ./dist/index.css",
-    "build": "npm run clean && npm run build-ts && npm run build-css"
+    "build": "npm run clean && npm run build-ts && npm run build-css",
+    "prepublish": "npm run build"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -34,6 +36,9 @@
     "url": "https://github.com/chttyCode/component/issues"
   },
   "homepage": "https://github.com/chttyCode/component#readme",
+  "files":[
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
@@ -76,19 +81,23 @@
     "typescript": "^4.3.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.29.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.14.6",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "@typescript-eslint/parser": "^4.27.0",
     "classnames": "^2.3.1",
-    "eslint": "^7.29.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-transition-group": "^4.4.2"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   }
 }

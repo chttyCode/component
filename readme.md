@@ -333,4 +333,15 @@
               ```
             - 发布时 package.jon 中将 React 定义为 peerDependencies
 
+# 发布
+
+- npm whoami(npm 源设置)
+- package 维护
+  - version:版本号 https://semver.org/
+  - files: 上传文件，默认按照 gitignore 上传
+- 添加 publish 钩子，执行 build
+- 精简依赖包
+  - peerDependencies 处理版本冲突
+    - 本地开发时可将依赖设置为 devDependencies
+
 # CI/CD
