@@ -310,7 +310,27 @@
   - 配置打包 tsconfig.build.json
   - 配置打包命令
     - 打包
-  - 本地开发测试
-    -
+  - 开发测试
+    - 发布测试包安装
+    - npm link
+      - 源码目录执行 npm link 会创建软链
+        - /usr/local/lib/node_modules/component -> /Users/kong.ds/Documents/person/component
+      - 开发项目
+        - npm link component 建立软链接
+        - /Users/kong.ds/Documents/test/my-test/node_modules/component -> /usr/local/lib/node_modules/component -> /Users/kong.ds/Documents/person/component
+        - package.json 中手动添加依赖
+      - bug
+        - index.js:1 Could not find icon {prefix: "fas", iconName: "check-circle"}
+          - 定位： ICON 组件引用了第三的库没有打包
+        - Error: Invalid hook call. Hooks can only be called inside of the body of a function component.
+          - 定位：React 版本不一致
+          - 解决方式：
+            - https://reactjs.org/warnings/invalid-hook-call-warning.html
+            - 源码 React 的包引用项目的 React
+              - npm link 项目 React 地址
+              ```js
+                sudo npm link ../../test/my-test/node_modules/react/
+              ```
+            - 发布时 package.jon 中将 React 定义为 peerDependencies
 
 # CI/CD
