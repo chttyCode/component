@@ -1,6 +1,7 @@
 # Don't track content of these folders
 node_modules/
 dist/
+storybook-static/
 .DS_Store
 
 

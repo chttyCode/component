@@ -345,5 +345,21 @@
     - 本地开发时可将依赖设置为 devDependencies
 - lint & test
   - 发布前执行代码规范和测试用例
+- 生成文档首页
 
 # CI/CD
+
+- git push->运行单元测试->npm publish->生成文档首页->上传服务器->生产文档站点
+- CI : 持续集成
+  - 频繁将代码 merge master
+  - 快速发现问题
+  - 防止分支代码偏离
+- CD:持续交付、持续部署
+  - 将新版本交付给用户
+  - 部署生产环境
+- 工具
+  - [travis ci](https://travis-ci.com/)
+  - prepublish vs prepublishOnly
+    - prepublish 每次 install 都执行
+    - prepublishOnly 只有 publish
+  -
