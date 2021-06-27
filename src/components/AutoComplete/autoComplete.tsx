@@ -8,8 +8,8 @@ import React, {
   useRef,
 } from "react";
 import classNames from "classnames";
-import Input, { InputProps } from "../Input/input";
-import Icon from "../Icon/icon";
+import Input, { InputProps } from "../input/input";
+import Icon from "../icon/icon";
 import Transition from "../transition/transition";
 import useDebounce from "../../hooks/useDebounce";
 import useClickOutside from "../../hooks/useClickOutside";
