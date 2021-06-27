@@ -1,7 +1,7 @@
 {
   "name": "chtty-component",
   "version": "0.1.1",
-  "private":false,
+  "private": false,
   "description": "web component",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -37,7 +37,7 @@
     "url": "https://github.com/chttyCode/component/issues"
   },
   "homepage": "https://github.com/chttyCode/component#readme",
-  "files":[
+  "files": [
     "dist"
   ],
   "devDependencies": {
