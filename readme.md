@@ -362,4 +362,11 @@
   - prepublish vs prepublishOnly
     - prepublish 每次 install 都执行
     - prepublishOnly 只有 publish
-  -
+  - [githu pages](https://pages.github.com/)
+    - 更新.travis.yml 配置文件
+      - 新增 script 执行脚本
+      - 新增 deploy
+        - add github_token 设置 travis 的 github_token
+        - add local_dir
+- Beautiful shell
+  - git 文件名大小写不敏感
