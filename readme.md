@@ -1,3 +1,5 @@
+> 从零学习搭建开发项目业务组件库
+
 # 搭建模版工程
 
 - 依赖安装
@@ -368,5 +370,7 @@
       - 新增 deploy
         - add github_token 设置 travis 的 github_token
         - add local_dir
+      - [chtty-component](https://chttycode.github.io/component/)
+  - npm publish
 - Beautiful shell
   - git 文件名大小写不敏感
